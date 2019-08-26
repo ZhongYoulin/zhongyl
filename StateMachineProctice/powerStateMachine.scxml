@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" binding="early" xmlns:qt="http://www.qt.io/2015/02/scxml-ext" datamodel="cplusplus:DataModel:DataModel.h" name="PowerStateMachine" qt:editorversion="4.6.1" initial="nomal">
+    <qt:editorinfo initialGeometry="110.13;111.14;-20;-20;40;40"/>
+    <state id="nomal">
+        <qt:editorinfo geometry="314.06;222.28;-60;-50;120;100" scenegeometry="314.06;222.28;254.06;172.28;120;100"/>
+        <transition type="external" event="powerLoss" target="low">
+            <qt:editorinfo endTargetFactors="44;20.12" localGeometry="213.10;-57.40"/>
+        </transition>
+        <transition type="external" event="pwoerUp" target="full">
+            <qt:editorinfo endTargetFactors="29.01;19.24"/>
+        </transition>
+        <onentry/>
+    </state>
+    <state id="low">
+        <qt:editorinfo geometry="643.40;194.75;-60;-50;120;100" scenegeometry="643.40;194.75;583.40;144.75;120;100"/>
+        <transition type="external" event="powerLoss" target="danger">
+            <qt:editorinfo endTargetFactors="73.25;28.91"/>
+        </transition>
+        <transition type="external" event="pwoerUp" target="nomal"/>
+    </state>
+    <state id="danger">
+        <qt:editorinfo geometry="601.59;437.43;-60;-50;120;100" scenegeometry="601.59;437.43;541.59;387.43;120;100"/>
+        <transition type="external" event="pwoerUp" target="low">
+            <qt:editorinfo endTargetFactors="84.49;82.53" localGeometry="-5.09;-76.47;0.69;-98.07"/>
+        </transition>
+    </state>
+    <state id="full">
+        <qt:editorinfo geometry="289.58;418.05;-60;-50;120;100" scenegeometry="289.58;418.05;229.58;368.05;120;100"/>
+        <transition type="external" event="powerLoss" target="nomal">
+            <qt:editorinfo endTargetFactors="75.49;75.49" localGeometry="33.65;-84.62"/>
+        </transition>
+    </state>
+</scxml>

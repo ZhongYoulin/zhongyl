@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>powerStateMachine.scxml</file>
+    </qresource>
+</RCC>
